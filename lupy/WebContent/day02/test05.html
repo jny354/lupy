@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//나이를 입력받아서 성년인지 미성년인지 판별하세요.
+	// 입력 받아서 변수에 기억
+	var str = prompt('나이입력 :');
+	//정수로 변환
+	var age = parseInt(str);
+	//결과값 변수
+//	var result = '';
+	//조건처리하고
+	/*
+	//if 명령으로 처리
+	if(age >= 20){
+//		var result = '성년'; //지역변수
+		result = '성년';
+	}
+	if (age < 20){
+		result = '미성년';
+		
+	}
+	*/
+	
+	/*
+	// if 문만으로는 
+	var result = '미성년'; //if 문의 조건식이 거짓일때 결과값을 변수로 만든다.
+	if(age >= 20){
+		result = '성년'; //조건식이 참일때 결과값을 변경한다.
+		
+	}
+	//변경이 안된경우는 조건식이 거짓인 경우이다.
+	*/
+	
+	/*
+	//두가지 경우에 대한 처리는 if ~ else 명령으로 처리한다.
+	if(age>= 20){
+		result = '성년';
+		
+	} else {
+		result = '미성년';
+		
+	}
+	*/
+	
+	//20세 미만은 미성년
+	//29세 이하는 청년
+	//30세 이상은 성년으로 표현하세요.
+	/*
+	if (age < 20){
+		result = '미성년';
+		
+	} else if (age >= 20, age <= 30){
+		result = '청년';
+		
+	} else if (age >= 30){
+		result = '성년';
+		
+	}
+	*/
+	
+	/*
+	if(age >= 30){
+		result = '성년';
+	} else if(age >=20){ //이 조건식의 전제조건읜 age < 30 가 포함되어있다.
+		result = '청년';
+	} else if(age < 20){
+		result = '미성년'
+	}
+	*/
+	
+	var calc = parseInt(age/10);
+	
+	switch(calc){
+	case 0:
+		result = '미성년';
+		break;
+	case 1:
+		result = '미성년';
+		break;
+	case 2:
+		result = '청년';
+		break;
+	default:
+		result = '성년';
+	}
+	
+	//참고] break: 현재실행중인 switch 또는 반복문의 실행을 즉시 종료하세요.
+
+	//결과 출력
+	document.write('<h1> 입력받은 나이 [' + age + ' ]는 ' + result + "입니다");
+	//
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

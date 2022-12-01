@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+/*
+  1년은 365.2426 일 이다.
+  이것은 몇일 몇시간 몇분 몇초로 이루어져있는지 계산해서 출력하세요.
+  
+  참고]
+  	0.1 일은
+  		0.1 * 24 시간
+  		0.1 * 24 * 60 분
+  		0.1 * 24 * 60 * 60 초
+ 
+ */
+
+	var year = 365.2426;
+	var il = parseInt(year);
+	var namuji = year % 1;
+	var tmp = namuji * 24 * 60 * 60;
+	var sec = parseInt(tmp % 60);
+	
+	tmp = tmp - sec;
+	var min = parseInt(tmp / 60 % 60); //분 ==> tmp / 60 : 시간을 포함한 분, tmp / 60 % 60 : 시간을 뺀 분
+	var hour = tmp / 60 / 60; //시간
+	
+	document.write('<h3>1년은' + year + ' 일 이고 이것을 시분초로 환산하면 ' +
+					il + '일 ' + 
+					hour + ' 시간 ' +
+					min + ' 분 ' + 
+					sec + ' 초로 이루어져있습니다.</h3>'
+	
+	);	
+	
+	var sec = totalSec % 60;
+	totalSec = totalSec - sec;
+	var min = (totalSec - sec) / 60; // 분
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

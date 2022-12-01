@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+/*
+ * 
+ 정수 세개를 입력받아서
+ 1. 제일 큰 수를 출력하세요.
+ 2. 제일 큰 수, 제일 작은 수, 가운데 수를 출력하세요.
+ */
+
+	var no1 =parseInt(prompt('정수 입력:'));
+	var no1 =parseInt(prompt('정수 입력:'));
+	var no1 =parseInt(prompt('정수 입력:'));
+	
+	
+	/*
+	삼항조건연산자
+	형식]
+		조건식? 참일때 반환값: 거짓일때 반환값;
+	
+
+
+
+	var max = (no1 > no2) ? (no1 > no3 ? no1 : no3) : (no2 > no3 ? no2 : no3);
+	var min = (no1 > no2) ? (no2 > no3 ? no3 : no2) : (no1 > no3 ? no3 : no1);
+	
+	
+	var mid = (no1 > no2) ? (no2 > no3 ? (no2) : (no1 > no3 ? no3 : no1)) : //no1 > no2 인 경우
+							(no1 > no3 ? no1 : (no2 > no3 ? no3 : no2)); //no2 > no1 경우
+		
+							*/	
+							
+	// if 구문으로 처리
+	var max, mid, min;
+	if (no1 > no2){
+		//no1이 no2보다 큰 경우
+		if(no1 > no3){
+			max = no1;
+			//no2와 no3의 크기는 아직 비교되지 않은 상태
+			if(no2 > no3){
+				mid = no2;
+				min = no3;
+				
+			}
+			if(no2<no3){
+				mid = no3;
+				min = no2;
+				
+			}
+			
+		}
+		if(no1 < no3){
+			max = no3;
+			mid = no1;
+			min = no2;
+		}
+		
+	}
+	if(no1 < no2){
+		//no1이 no2보다 작은 경우
+		if(no2 > no3){
+			max = no2;
+			//아직 no1과 no3의 크기비교는 안된상태.no2 > no1 > no3
+			if(no1 > no3){
+				mid = no1;
+				min = no3;
+				
+			}
+			if(no1 < no3){
+				mid = no3;
+				min = no1;
+			}
+		}
+		if (no2 < no3){
+			//no1 < no2 < no3
+			max = no3;
+			mid = no2;
+			min = no1;
+			
+		}
+		
+	}
+	
+	// if else 구문으로 처리
+	if(no1 > no2){
+		//no1 > no2
+		if(no1 > no3){
+			//no1 > no2 && no1 > no3 ==> no2 ?? no3
+			max = no1;
+			if(no2 > no3){
+				mid = no2;
+				min = no3;
+				
+			} else {
+				mid = no3;
+				min = no2;
+				
+			}
+			
+		} else {
+			max = no3;
+			mid = no1;
+			min = no2;
+			
+		}
+	} else {
+		//no1 < no2 인 경우
+		if(no2 > no3){
+			max = no2;
+			//no1 ??? no3 최대값이 no2로 결정된 상황
+			if(no1 > no3){
+				mid = no1;
+				min = no3;
+			} else {
+				mid = no3;
+				min = no1;
+				
+			}
+		} else {
+			// no1 < no2 그리고
+			// no2 < no3 인 경우
+			max = no3;
+			mid = no2;
+			min = no1;
+			
+		}
+	}
+	
+
+ 	</script>
+
+</head>
+<body>
+
+</body>
+</html>

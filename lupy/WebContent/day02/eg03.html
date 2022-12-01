@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+/*
+ * 두개의 정수를 입력받아서, 
+ 
+ 그 수들을 밑변, 높이라 가정하고, 
+ 삼각형의 면적을 구해주는 프로그램을 작성하세요.
+ 
+ 실행예 ]
+ 	밑변 : xxx
+ 	높이 : ***
+ 	면적: ****.**
+ 	
+ 참고 ]
+ 	삼각형 면적 = 밑변 * 높이 / 2
+ 
+ */
+ 
+ 	//변수 만들고 입력받고
+ 	//입력받은 내용은 문자열이고 그 문자열을 정수로 바꾸는 작업이 필요하다.
+ 	
+ 	//그 두가지를 한꺼번에 처리한다.
+ 	//함수를 호출한다는 것의 의미는 함수의 반환값을 함수 호출 위치에 쓰겠다라는 의미.
+ 	/*
+ 		abc()의 반환값이 10 이라고 가정하면,
+ 		var no = abc () + 300;
+ 		==> var no = 10 + 300; 이 될 것이고,
+ 			var no = 310;
+ 	
+ 	*/
+ 	loop:
+ 	while(true){
+		var dohyung = prompt('만들 도형을 입력하세요.\n종료 : q');
+	 	/*
+		if (dohyung == 'q'){
+	 			//종료해준다.
+	 		alert('프로그램을 종료합니다.');
+	 		break; //break: 감싸고 있는 반복문과 switch-case 명령을 즉시 종료하는것. 이 경우는 while 명령 종료
+	 	}
+	 	
+	 	*/
+	 	switch(dohyung){
+	 	case 'q':
+	 		//종료해준다.
+	 		alert('프로그램을 종료합니다.');
+	 		break loop;
+	 		break; //break: 감싸고 있는 반복문과 switch-case 명령을 즉시 종료하는 명령. 이 경우는 while 명령 종료
+	 	case '원':
+	 		var rad = parseInt(prompt('반지름 : '));
+	 		var arround = 2 * rad * 3.14;
+	 		var area = rad * rad * 3.14;
+	 		
+	 		var str = ('<h3> 입력받은 반지름 : ' + rad + ' 을 가지는 원의 둘레는 ' + arround +
+	 	 							' 이고, 원의 넓이는 ' + area + ' 입니다.</h3>');
+	 	 							document.write
+		
+ 		break;
+ 	case '세모':
+ 	 	var width = parseInt (prompt('밑변 : ')); // 만약 10을 입력하게 되면 이 행은 var width = parseInt('10'); 이 될 것이다.
+ 	 	var height = parseInt(prompt('높이 : '));
+ 	 	
+ 	 	var area = width * height / 2;
+ 	 	
+ 	 	document.write('<h3> 입력받은 삼각형의 높이 : ' + height + ', 밑변 : ' + width +
+ 	 							'을 가지는 삼각형의 넓이는 ' + area + ' 입니다.</h3>');
+
+ 		break;
+ 	case '네모';
+ 		var width = parseInt (prompt('가로 : ')); // 만약 10을 입력하게 되면 이 행은 var width = parseInt('10'); 이 될 것이다.
+	 	var height = parseInt(prompt('세로 : '));
+	 	
+	 	var area = width * height / 2;
+	 	
+	 	document.write('<h3> 입력받은 세로 : ' + height + ', 가로 : ' + width +
+	 							'을 가지는 사각형의 넓이는 ' + area + ' 입니다.</h3>');
+	
+	 		break
+	 	}
+	 	
+	
+		var 
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

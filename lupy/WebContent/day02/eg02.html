@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	산술 연산자 연습문제
+	
+	76,572 원을 지불하려고 한다.
+	필요한 화폐단위가 몇개씩인진 계산해서 출력하세요.
+	
+	참고 ]
+		화폐단위
+			50000, 10000, 5000, 1000, 500, 100, 50, 10, 1
+			
+	변수를 만들고 변수에 계산된 값을 입력해서 출력하세요.
+	
+	참고 ]
+		실수를 정수로 바꾸는 방법
+			parseInt(실수)
+		
+		
+	(70,000 - (70,000 % 50,000)) / 50,000 ==> 1
+	(20,000 - (20,000 % 10,000)) / 10,000 ==> 2
+	(6,000)
+		
+		76572
+		50000 1
+		10000 2
+		5000 1
+		1000 1
+		500 1
+		10 7
+		1 2
+		
+		
+ */
+	var total = 76572;
+	var calc = total;
+	
+	var oman = parseInt(calc / 50000) // 오만원권
+	calc = calc % 50000; //
+	var man= parseInt(calc / 10000); // 만원권
+	calc = calc % 10000 ;
+	var othousand = parseInt (calc / 5000);
+	calc = calc % 5000;
+	var thousand = parseInt (calc / 1000);
+	calc = calc % 1000;
+	var oback = parseInt (calc / 500);
+	calc = calc % 500;
+	var back = parseInt (calc / 100);
+	calc = calc % 100;
+	var oship = parseInt (calc / 50);
+	calc = calc % 50;
+	var ship = parseInt (calc / 10);
+	calc = calc % 10;
+	var o = parseInt (calc / 5);
+	calc = calc % 5;
+	var one = parseInt (calc / 1);
+	calc = calc % 1;
+	
+
+document.write('<h3>' + total + '원은</h>')
+document.write('<h3>오만원권 :' + oman + '</h3>');
+document.write('<h3>만원권 :' + man + '</h3>');
+document.write('<h3>오천원권 :' + othousand + '</h3>');
+document.write('<h3>천원권 :' + thousand + '</h3>');
+document.write('<h3>오백원 :' + oback + '</h3>');
+document.write('<h3>백원 :' + back + '</h3>');
+document.write('<h3>오십원 :' + oship + '</h3>');
+document.write('<h3>십원 :' + ship + '</h3>');
+document.write('<h3>오원 :' + o + '</h3>');
+document.write('<h3>일원 :' + one + '</h3>');
+document.write('<h3> 이 필요합니다.</h>');
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

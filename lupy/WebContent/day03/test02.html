@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+//두 정수를 입력받아서 합을 반환해주는 함수.
+	function getTotal(no1, no2) {
+		//합을 구한다	
+		var sum = no1 + no2;
+		//합을 반환해준다.
+		return sum;
+	
+}
+
+//두 수를 입력받아서 합을 구해서 출력해보자.
+	var num1 = parseInt(prompt('정수 입력 : '));
+	var num2 = parseInt(prompt('정수 입력 : '));
+	
+	//합을 구한다
+	var sum = getTotal(num1, num2);
+	alert('입력받은 두수\n ' + 
+			num1 + ' 와 ' + num2 + ' 의 합은 \n ' + 
+			sum + '입니다');
+	
+	/*
+		문자열데이터중
+		\n : 줄바꿈기호
+		\r\n : 엔터키
+		*/
+		
+		/*
+		getTotal 함수의 경우 호출할 때
+			getTotal()
+			getTotal(10)
+			getTotal(10, 20, 30)
+		이렇게는 호출 할 수 없다.
+		반드시 정의된 매개변수의 갯수만큼 데이터가 입력이 되야함.
+		
+		참고 ]
+			함수를 정의할 때 함수 이름을 만들지 않아도 사용할 수 있다.
+			이 때 이 함수를 무명함수라 칭하고, 
+			이 경우는 매개변수에서 함수를 바로 정의해서 사용하거나,
+			변수에 기억시켜서 사용해야 된다.
+			
+		var abc = function(매개변수1, 매개변수2, ...){
+			실행내용...
+			[ return [반환값] ;]
+				
+		};
+		// ==> function abc(매개변수1, 매개변수2, ...){} 와 같은 함수가 된다.
+		
+		function abc(function(){
+			실행내용...
+			[return[반환값] ;]
+		});
+		
+		*/
+		
+		
+		
+		
+		
+		
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+/*
+ 세자리 숫자를 입력받아서
+ 가장 가까운 100의 배수를
+ 출력해주는 프로그램을 작성하세요.
+ 
+ 	예 ]
+		 241 ==> 200
+		 378 ==> 400
+ 
+ */
+ 
+	var num = parseInt(prompt('세자리 숫자 입력 :'));
+	/*
+		이 문제는 100으로 나눈 나머지가
+			50 이상인 경우는 십의 자리에서 반올림한 숫자
+			50 미만인 경우는 십의 자리에서 버림한 숫자가 된다
+		따라서 100으로 나눈 나머지에 따라서 처리가 될 것이다.
+			
+	*/
+	var rest = num % 100;
+	
+	var result = 0;
+	if(rest >=50) {
+		//십의자리에서 반올림
+		result = (parseInt(num / 100) + 1) * 100;
+		
+	} else { //50 미만인 경우
+		result = parseInt(num / 100) * 100;
+		
+	}
+	document.write('<h1>입력받은 세자리 정수 ' + num + ' 에 가까운 100단위 숫자는 <br>' + 
+		result + ' 입니다. </h1>'
+	);
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

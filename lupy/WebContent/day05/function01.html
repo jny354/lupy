@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+	function getSum(){
+		
+		//1. 숫자를 입력받는다.
+		var sno1 = prompt('첫번째 숫자 : ');
+		var sno2 = prompt('두번째 숫자 : ');
+		
+		//2. 정수로 변환한다.
+		var no1 = parseInt(sno1);
+		var no2 = parseInt(sno2);
+		
+		//두 수중 작은 수를 판별해준다.
+		
+		if(no1 > no2){
+			var tmp = no1;
+			no1 = no2;
+			no2 = tmp;
+		}
+		
+		//3. 두 수 사이의 합을 구한다.
+		var sum = 0;
+		for(var i = no1; i < no2 + 1; i++ ){
+			//sum += i;
+			sum = sum + i;
+			
+		}
+		alert('no1 : ' + no1 + ', no2 : ' + no2 + ', sum : ' + sum);
+	}
+		//4. 출력한다.
+		getSum ;
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

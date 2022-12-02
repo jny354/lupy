@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+
+/*
+ * 5 자리 숫자를 입력받아서,
+ 각 자리의 숫자를 기억하는 배열에 기억시키고,
+ 각 자리수의 합을 출력해주는 프로그램을 작성하세요.
+ 
+ 예]
+ 12345
+ [1, 2, 3, 4, 5]로 만들고,
+ 합: 15
+ */
+/*
+	var nums = [1, 2, 3, 4, 5];
+	alert(nums instanceof Array ? '배열입니다.' : '배열이 아닙니다.');
+*/
+
+	var str = prompt('다섯자리 정수 입력 : ');
+	var nums = []; //한자리 숫자 다섯개 기억할 배열
+	for (var i = 0; i < str.length ; i++ ){
+		//입력받은 문자열 숫자의 길이만큼 반복
+		//하나씩 꺼내서 숫자로 바꾸고
+		var sno = str[i]; // 한자리 숫자형태 문자열
+		var no = parseInt(sno);
+		//배열에 채워준다.
+		
+		nums[i] = no;
+		
+		
+	}
+	
+	var sum = 0; //각 자리 숫자 합 기억할 변수
+	for(var i = 0 ; i < nums.length ; i++ ) {
+		sum += nums[i]; //배열에서 하나씩 꺼내서 누적해서 더해준다.
+	}
+	document.write('입력받은 숫자 : ' + str + '<br>');
+	document.write('각 자리 숫자 합계 : ' + sum + '<br>');
+	
+	/*
+	1. 
+		*****
+		*****
+		*****
+		*****
+		*****
+
+	2.
+		*
+		**
+		***
+		****
+		*****
+	
+	3.
+		    *
+		   **
+		  ***
+		 ****
+		*****
+	
+	4.
+		*****
+		****
+		***
+		**
+		*
+	
+	5. 
+		*****
+		 ****
+		  ***
+		   **
+		    *
+		
+	*/
+	/*
+for(var h = 0 ; h < 3 ; h++ ){ // 10개 행 출력
+	for(var i = 0 ; i < 5 ; i++ ){ //한행 출력...
+		document.write('*');
+	}
+	document.write('<br>'); //줄바꿈
+
+	
+}
+	var str = '';
+	for(var i = 0 ; i < 5 ; i++ ){
+		for(var j = 0 ; j < 5 ; j++){
+			str = str + '*';
+		}
+		str = str + '<br>'
+	}
+	
+	*/
+	/*
+	var arr = [1, 2, 3, 4, 5];
+	
+	for(var i = 0 ; i < arr.length ; i++ ){
+		var no = arr[i];
+		console.log(no);
+	}
+	*/
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

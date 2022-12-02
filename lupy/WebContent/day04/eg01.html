@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel = "stylesheet" type="text/css" href="../css/w3.css">
+<link rel = "stylesheet" type="text/css" href="../css/Coco.css">
+<style type="text/css">
+	h2 {
+		margin-top: 0px;
+	}
+</style>
+<script type="text/javascript">
+/*
+	문제 1 ]
+		전기 요금을 계산하는 프로그램을 작성하세요.
+		
+		요금표 ]
+			
+			용도		코드			기본요금			사용요금
+			가정용		1				3000				245
+			산업용		2				2400				157
+			교육용		3				2900				169
+			상업용		4				3200				174
+			
+		계산식 ]
+				전기료 = 기본요금 + 사용량 * 사용요금
+				
+		코드와 사용량을 입력받아서 계산해주는 프로그램을 작성하세요.
+ */
+ 
+	//전기요금 계산해서 반환해주는 함수
+	function calcCharge(code, qt){
+		//사용요금 변수
+		var charge = 0;
+		var money = 0;
+		var basic = 0;
+		//계산하고 
+		switch(code){
+		case 1 :
+			basic = 3000;
+			money = 245;
+			break;
+		
+		case 2:
+			basic = 2400;
+			money = 157;
+			break;
+		
+		case 3:
+			basic = 2900;
+			money = 169;
+			break;
+		
+		case 4:
+			basic = 3200;
+			money = 174;
+			break;
+		
+		}
+		
+		charge = basic + qt * money;
+		return charge;
+	
+	}
+
+</script>
+</head>
+<body>
+	<div class= "w3-content mxw650">
+		<!-- 타이틀 태그 -->
+		<h1 class="w3-blue w3-center w3-padding w3-card-4">전기요금 계산기</h1>
+		<!-- 입력태그 -->
+		<form class="w3-col w3-padding w3-card-4 w3-margin-top w3-margin-bottom" name="frm" id="frm">
+			<div class="w3-col w3-margin-top">
+				<label for="code" class="w3-col m2 w3-right-align">사용 용도 :</label>
+				<select name="code" id="code" class="w3-col m9 w3-select w3-border w3-margin-left w3-center">
+					<option selected># 사용 용도 #</option>
+					<option value="1">가정용</option>
+					<option value="2">산업용</option>
+					<option value="3">교육용</option>
+					<option value="4">상업용</option>
+				</select>
+			</div>
+			<div class="w3-col w3-margin-top w3-margin-bottom">
+				<label for="qt" class="w3-col m2 w3-right-align">사용량 :</label>
+				<input type="text" name="qt" id="qt" placeholder="사용량을 입력하세요"
+						class="w3-col m9 w3-input w3-border w3-margin-left w3-center">
+			</div>
+		
+		</form>
+		<!-- 버튼태그 -->
+		<div class="w3-col w3-card-4">
+			<div class="w3-half w3-button w3-orange" id="rbtn">리셋하기</div>
+			<div class="w3-half w3-button w3-blue" id="cbtn">계산하기</div>
+		</div>
+		
+		<!-- 결과 창 태그 -->
+		
+		<!-- 자바스크립트에서 태그의 속성을 변경하는 방법은
+				태그선택.style.속성이름 = '속성값';
+				
+			참고 ] 
+				자바스크립트에서의 style 속성 이름은 두 단어로 이루어진 경우,
+				' - ' 가 붙지 않고, 
+				첫 단어와 두번째 단어를 붙여서 사용하는데,
+				이 때, 두번째 단어의 첫문자는 대문자 사용.
+				
+				예 ]
+					태그선택.style.backgroundColor = 'blue'
+		 -->
+		<div class="w3-col w3-card-4 w3-margin-top" style="display:none" id="resultfrm">
+			<h2 class= "w3-col w3-pink w3-padding w3-center w3-">사용 전기료</h2>
+			<div class="w3-col">
+				<h4 id="msg"></h4>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('rbtn').onclick = function(){
+		document.frm.reset();
+	};
+	
+	document.getElementById('cbtn').onclick = function(){
+		// 할 일
+		//1. 입력데이터
+		//코드
+		var tmp = document.frm.code.value;
+		var code = parseInt(tmp);
+//		document.querySelectorAll(':selected')
+		
+		//사용량
+		var tmp = document.frm.qt.value;
+//		var tmp = document.getElementById('qt').value;
+		var qt = parseInt(tmp);
+		
+		//2. 계산하고
+		var result = calcCharge(code, qt);
+		
+		//3. 결과 출력하고
+//		alert('사용 전기 요금 : ' + result );
+		//데이터 채우고
+		document.getElementById('msg').innerHTML = '사용전기요금 : ' + result + ' 원 ' ;
+		//태그 노출
+		document.getElementById('resultfrm').style.textAlign = 'block' ;
+		document.getElementById('resultfrm').style.display = 'block' ;
+		
+		document.frm.reset();
+	};
+
+</script>
+</body>
+</html>

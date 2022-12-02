@@ -1,0 +1,105 @@
+.mxw500{
+	max-width: 500px;	
+}
+.mxw550{
+	max-width: 550px;	
+}
+.mxw600{
+	max-width: 600px;	
+}
+.mxw650{
+	max-width: 650px;	
+}
+.mxw700{
+	max-width: 700px;	
+}
+.mxw750{
+	max-width: 750px;	
+}
+.mxw790{
+	max-width: 790px;	
+}
+.mxh338{
+	max-height: 338px;	
+}
+.mxh20{
+	max-height: 20px;	
+}
+.mxh40{
+	max-height: 40px;	
+}
+.mxw800{
+	max-width: 800px;	
+}
+
+.inblock {
+	display: inline-block;	
+}
+
+/* margin */
+.mgb10 {
+	margin-bottom:10px
+}
+.mgb20 {
+	margin-bottom:20px
+}
+.mgt10{
+	margin-top:10px;
+}
+.mgt20{
+	margin-top:20px!important;
+}
+.mgl9 {
+	margin-left:9px;
+}
+.mgl10{
+	margin-left:10px;
+}
+.mgr10 {
+	margin-right:10px;	
+}
+
+/* padding */
+.pdt10{
+	padding-top: 10px;
+}
+.pdr10 {
+	padding-right:10px;
+}
+.pdb10{
+	padding-bottom:10px;
+}
+.pdl9 {
+	padding-left:9px;
+}
+.pdl10 {
+	padding-left:10px;
+}
+.pdv20 {
+	padding-top:20px;
+	padding-bottm:20px;
+	
+}
+/*라벨 클래스*/
+.lblft14 {
+	font-size:14pt;
+	
+}
+
+.avtimg {
+	width: 80px;
+	height: auto;
+}
+
+/* 라벨 클라스 */
+.lblft14{
+	font-size: 14px;
+	line-height: 230%
+	
+}
+
+/*가로사이즈 */
+.w160{
+	width:160px;
+	
+}

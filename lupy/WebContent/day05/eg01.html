@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+
+/*
+ * 
+ eg01]
+ 1 ~ n 까지의 곱을 구해서 반환해주는 함수 fact01 을 만들고,
+ 숫자를 입력해서 실행한 결과를 출력하세요.
+ 
+ 참고]
+ 	팩토리얼 : 1부터 n까지의 곱을 말한다.
+ 		기호 : n!
+ */
+	//팩토리얼 구하는 함수
+	var fact01 = function(no){
+ 		if(no == 1){
+ 			return 1;
+ 		}
+ 		
+ 		return no * fact01(no - 1);
+	};
+ 	function load01(){
+ 		document.getElementById('btn').onclick = function(){
+ 			var sno = document.getElementById('no').value;
+ 			var num = parseInt(sno);
+ 			
+ 			//팩토리얼 구하기
+ 			var result = fact01(num);
+ 			
+ 			document.getElementById('result').innerText = result;
+
+ 			document.getElementById('resultFr').style.display = 'block';
+ 		};
+  	}
+</script>
+
+</head>
+<body onload="load01();">
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-amber w3-padding w3-card-4">n까지의 팩토리얼</h1>
+		<div class="w3-col w3-margin-top w3-card-4 w3-padding">
+			<div class="w3-col w3-padding">
+				<div class="w3-col m2">
+					<label for="no">숫자 입력 : </label>
+				</div>
+				<div class="w3-col m9">
+					<input type="number" max="9999" name="no" id="no"
+							class="w3-input w3-border mgl10">
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class= "w3-col w3-button w3-blue" id="btn">계산하기</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4" style="display: none;" id="resultFr">
+			<h3 class="w3-margin w3-text-blue" id="result"></h3>
+		</div>
+	</div>
+</body>
+</html>

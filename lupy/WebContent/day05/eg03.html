@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+/*
+ 문제3]
+ 	'[도서리뷰]모던 웹을 위한 JavaScript + jQuery 입문(3판)'
+ 	이라는 문자열을 변수에 기억시키고
+ 	새로운 변수에 위 변수에 기억된 내용을 거꾸로 꺼내서 채워주세요.
+	그리고 출력하세요.
+ 	*/
+ 	
+ 	//순서
+ 	//1. 변수에 문자열 담는다
+ 	var origin = '[도서리뷰]모던 웹을 위한 JavaScript + jQuery 입문(3판)';
+ 	//2. 새로운 변수 만든다.
+ 	var descStr = '';
+ 	//3. 문자열의 길이 알아낸다.
+ 	var len = origin.length;
+ 	//마지막 인덱스
+ 	var lastIdx = len - 1;
+ 	//4. 뒤에서 부터 꺼내서 누적시켜준다.
+ 	for(var i = lastIdx ; i >=0 ; i--){
+ 		descStr = descStr + origin[i];
+ 		
+ 	}
+ 	
+ 	var revs = '';
+ 	var arr = [];
+ 	for(var i = 0 ; i < origin.length ; i++){
+ 		arr[i] = origin[i];
+ 		
+ 	}
+ 	
+ 	revs
+	revs = arr.reverse();toString().replaceAll(',','');
+ //	revs = arr.reverse();
+
+ 	//5. 출력한다.
+ 	document.write('<h1>origin : ' + origin + '</h1>');
+ 	document.write('<h1>reverse : ' + descStr + '</h1>');
+ 	document.write('<h1>reverse2 : ' + revs + '</h1>');
+ 	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

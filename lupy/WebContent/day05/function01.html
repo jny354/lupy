@@ -2,15 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>test</title>
 <script type= "text/javascript">
-
+/* 두 수를 입력받아서,
+ * 두 수 사이의 숫자들의 합을
+ 구해서 반환해주는 함수를 제작하고
+ 실행해서 출력하세요.
+ */
 	function getSum(){
 		
 		//1. 숫자를 입력받는다.
 		var sno1 = prompt('첫번째 숫자 : ');
 		var sno2 = prompt('두번째 숫자 : ');
-		
 		//2. 정수로 변환한다.
 		var no1 = parseInt(sno1);
 		var no2 = parseInt(sno2);
@@ -27,13 +30,13 @@
 		var sum = 0;
 		for(var i = no1; i < no2 + 1; i++ ){
 			//sum += i;
-			sum = sum + i;
-			
+			sum = sum + i;	
 		}
+
 		alert('no1 : ' + no1 + ', no2 : ' + no2 + ', sum : ' + sum);
 	}
 		//4. 출력한다.
-		getSum ;
+		getSum();
 </script>
 
 </head>

@@ -25,27 +25,45 @@
  		
  		return no * fact01(no - 1);
 	};
+	
+	function fact02(no){
+		
+		//반복문으로 팩토리얼 처리
+		var result = 1; 
+		// 결과 값 변수. 팩토리얼의 경우, 1로 초기화가 되어야 한다.
+		// <== 곱하기 작업을 해야하니까...
+		
+		for(var i = 1; i < no + 1 ; i++ ){
+//			result = result * i;
+			result *= i;
+		}
+	
+		return result;
+	}
  	function load01(){
  		document.getElementById('btn').onclick = function(){
  			var sno = document.getElementById('no').value;
  			var num = parseInt(sno);
  			
  			//팩토리얼 구하기
- 			var result = fact01(num);
+ 			var result = fact02(num);
  			
- 			document.getElementById('no').
+ 			document.getElementById('no').value = '';
  			
- 			document.getElementById('result').innerText = result;
-
+ 			document.getElementById('result').innerHTML = 
+ //			document.getElementById('result').textContent = 
+ //			document.getElementById('result').innerText = 
+ 				'<small style="color: gray;">1부터 입력받은 숫자 ' + num + 
+ 				'까지의 곱 : </span>' + result ;
+			document.getElementById('soo').innerHTML = num;
  			document.getElementById('resultFr').style.display = 'block';
  		};
-  	}
+ 	}
 </script>
-
 </head>
 <body onload="load01();">
 	<div class="w3-content mxw600 w3-center">
-		<h1 class="w3-amber w3-padding w3-card-4">n까지의 팩토리얼</h1>
+		<h1 class="w3-amber w3-padding w3-card-4"><span id="soo">n</span>까지의 팩토리얼</h1>
 		<div class="w3-col w3-margin-top w3-card-4 w3-padding">
 			<div class="w3-col w3-padding">
 				<div class="w3-col m2">

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+
+/* 
+ 	문제 6]
+ 		두 수를 입력받아서,
+ 		두 수의 최대 공약수를 고해서 출력하세요.
+ 		
+ 		최대 공약수
+ 			==> 두 수의 약수중 최대 숫자
+ 			
+ 			예]
+ 			6		12의 최대 공약수는 6
+ 			10		15의 최대 공약수는 5
+ 			
+ 		반복문으로 해결하세요.
+ 		
+ 		label이 붙은 for 명령
+ 		
+ 		형식]
+ 			라벨:
+ 			for(;;){
+ 				for(;;){
+ 					
+ 					if(){
+ 						
+ 						break 라벨;
+ 					}
+ 				}
+ 				
+ 			}
+ */
+//	5 x 5 의 계산이 나오면 그 단의 출력을 멈추고 다음 단으로 진행하는
+//	구구단을 출력하세요. 
+	loop:
+	for(var dan = 2; dan < 10 ; dan++ ){
+		document.write(dan + ' 단<br>');
+		for(var gop = 1; gop < 10 ; gop++){
+			if(dan == 5 && gop == 5){
+				document.write('<br>');
+				break loop;
+				
+			}
+			document.write(dan + ' x ' + gop + ' = ' + (dan*gop) + '<br>');
+			
+		}
+		document.write('<br>');
+
+		
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

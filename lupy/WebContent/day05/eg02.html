@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+
+/* 
+ * 문제 2]
+ * 	다섯자리 숫자를 입력받아서,
+ 입력받은 숫자가 회문수인지 아닌지를 판별해주는 프로그램을 작성하세요.
+ 
+ 참고]
+ 	회문수: 숫자중 앞으로 읽는 것과 뒤에서부터 읽었을때 같은 숫자를 회문수라 한다.
+ 	
+ 	예: 12321 ====> 회문수
+ 		12312 ====> 회문수가 아니다.
+ 	
+ 	prompt 함수로 입력받게 되면,
+ 	우리가 12345라고 입력하면 '12345' 로 받게 된다.
+ 	문자열은 위치값(인덱스)이 존재한다.
+ 	
+ 	'12345' 로 입력한 경우,
+ 		
+ 		*/
+ 
+ 
+ 	function func01(){
+ 		document.getElementById('click').onclick = function(){
+ 			var sno = document.getElementById('num').value;
+ 			
+ 			var result = '회문수이다.';
+ 			for(var i = 0 ; i < 2 ; i++){
+ 				var no1 = sno[i]; //i번째 숫자
+ 				var no2 = sno[sno.length - 1 - i]; //뒤에서 i번째 숫자
+
+ 				if(no1 != no2){
+ 					result = '회문수가 아니다.';
+ 					break;
+ 				}
+ 			}
+ 			
+ 			alert('입력받은 숫자' + sno + ' 는 ' + result);
+ 		};
+ 	}
+
+</script>
+
+</head>
+<body onload="func01()">
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">회문수 판독기</h1>
+		<div class="w3-col w3-padding w3-margin-top w3-card-4">
+			<div class="w3-col w3-margin-top w3-card-4"></div>
+		</div>
+	</div>
+
+</body>
+</html>

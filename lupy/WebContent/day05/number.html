@@ -5,14 +5,7 @@
 <title>Insert title here</title>
 <link rel= "stylesheet" type="text/css" href="../css/w3.css">
 <link rel= "stylesheet" type="text/css" href="../css/Coco.css">
-<style type="text/css">
-	
-	pre {
-		font-size: 14pt;
-	}
-</style>
 <script type= "text/javascript">
-
 /*
 1.
 	  1  2  3  4  5
@@ -54,7 +47,6 @@
 	  7  8  9 10
 	  11 12 13 14 15
 	  
-
 7.
 	              1
 	           2  3
@@ -62,14 +54,12 @@
 	     7  8  9 10
 	     7  8  9 10
 	 11 12 13 14 15
-
-
 */
 
 	document.write('<div class="w3-content mxw700 w3-center">');
 
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>1. </h1>');
+	document.write('<h1 class="w3-center">1. </h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
@@ -79,10 +69,9 @@
 	}
 	document.write('</div>');
 
-	document.write('<div class="w3-content mxw700 w3-center">');
-
+	
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>2. </h1>');
+	document.write('<h1 class="w3-center">2. </h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
@@ -94,10 +83,20 @@
 
 	
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>3. </h1>');
+	document.write('<h1 class="w3-center">3. </h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
+			var no = 5 * i + j + 1;
+			var ch = no > 9 ? ' ':'  ';
+			/*
+			if(no > 9){
+				ch = ' ';
+			} else { 
+				ch = '  ';
+			}
+			*/
+			
 			document.write(' ' + (i + 1));
 
 		}
@@ -105,8 +104,8 @@
 	}
 	document.write('</div>');
 	
-	document.write('<div class="inblock mgl10 w180 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>4. </h1>');
+	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
+	document.write('<h1 class="w3-center">4. </h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
@@ -127,13 +126,12 @@
 	
 	
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>5. </h1>');
+	document.write('<h1 class="w3-center">5. </h1>');
+	var no = 25;
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
-		
 			var ch = no > 9 ? ' ':'  ';
-			
 			document.write(ch + no);
 			no = no - 1;
 		}
@@ -142,30 +140,26 @@
 	}
 	document.write('</div>');
 	
-	document.write('</div>');
 
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>5-1 </h1>');
+	document.write('<h1 class="w3-center">5-1 </h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
 		for(var j = 0 ; j < 5 ; j++){
 			var no = -5 * i - j + 25;
 			var ch = no > 9 ? ' ':'  ';
 			document.write(ch + no);
-
 		}
 		document.write('</pre>');
 	}
 	document.write('</div>');
 	
-	document.write('</div>');
-	
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>6</h1>');
+	document.write('<h1 class="w3-center">6</h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
-		for(var i = 0 ; i < 5 ; j++){
-			var no = -5 * i - j + 25;
+		for(var i = 0 ; j < i + 1 ; j++){
+			var no = i *(i+1) / 2 + 1 + j;
 			var ch = no > 9 ? ' ':'  ';
 			document.write(ch + no);
 
@@ -174,32 +168,27 @@
 	}
 	document.write('</div>');
 	
-	document.write('</div>');
 
 	document.write('<div class="inblock mgl10 w160 w3-left-align w3-padding w3-card-4">');
-	document.write('<h1>6 - 1</h1>');
+	document.write('<h1 class="w3-center">6 - 1</h1>');
 	for (var i = 0 ; i < 5 ; i++ ){
 		document.write('<pre>');
-			var no = 0;
-			for(var k = 0 ; k < i+1 ; k++ ){
-				no+= k;
-				
-			}
-			for(var j = 0 ; j < i + 1 ; j++ ){
-				var num = no + j;
-				var ch = num > 9 ? ' ':'  ';
-				document.write(ch + num );
-			}
-			no += 1;
-
-			document.write(ch + num);
-
+		var no = 1;
+		for(var k = 0 ; k < i+1 ; k++ ){
+			no+= k;
+		}
+		for(var j = 0 ; j < i + 1 ; j++ ){
+			var num = no + j;
+			var ch = num > 9 ? ' ':'  ';
+			document.write(ch + num );
 		}
 		document.write('</pre>');
+	}
+	document.write('</div>');
 
 	document.write('</div>');
 	
-	document.write('</div>');
+
 
 </script>
 

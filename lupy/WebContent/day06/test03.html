@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var city = new Array('Seoul', 'Busan', 'Incheon');
+	
+	//배열의 데이터를 꺼내서 출력하는 기능의 함수
+	function printArr(){
+		for(var i = 0 ; i < city.length ; i++ ){
+			document.write((i + 1) + ' 번째 도시 : ' + city[i] + '<br>');
+			
+		}
+		
+	}
+	
+	city[3] = 'Bupyung';
+	printArr();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

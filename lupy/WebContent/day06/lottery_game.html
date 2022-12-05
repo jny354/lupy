@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+</head>
+
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">이번주 로또번호</h1>
+		<div class= "w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+<script type= "text/javascript">
+/*
+로또
+로또 번호는 1 ~ 45 사이의 숫자 6개로 만들어진다.
+*/
+	var lotteryGame = [];
+	for(var l = 0 ; l < 5 ; l++ ){
+	var lottery = [];
+	
+	loop:
+	for(var i = 0 ; lottery.length < 6 ; i++ ){
+		//랜덤한 번호를 만든다.
+		var no = parseInt(Math.random()*45) + 1;
+		
+		//중복검사
+		for(var j = 0; j < i ; j++ ){
+			if(lottery[j] == no){
+				//중복번호인 경우
+				i--;
+				continue loop;
+			}
+		}
+	//중복번호가 없으므로 배열에 채워준다.
+	lottery[i] = no;
+	}
+		//정렬
+		for(var i = 0; i < lottery.length -1 ; i++ ){
+			for(var j = i+1; j < lottery.length ; j++){
+				if(lottery[i] > lottery[j]){
+					var tmp = lottery[i];
+					lottery[i] = lottery[j];
+					lottery[j] = tmp;
+				}
+				
+			}
+			
+		}
+	//로또번호가 완성이 됐으므로, 배열에 기억시킨다.
+		lotteryGame[l] = lottery;
+	}
+	//결과 출력
+	document.getElementById('content').innerHTML = '';
+	for(var i = 0 ; i < lotteryGame.length ; i++ ){
+		var lottery = lotteryGame[i];
+		document.getElementById('content').innerHTML = 
+								document.getElementById('content').innerHTML + lottery + '<br>';
+		
+	}
+
+	/*
+			4 , 13 , 15 , 20 , 28 , 36
+			7 ,  9 , 10 , 17 , 23 , 26
+			6 , 22 , 26 , 30 , 36 , 37
+			3 , 13 , 16 , 29 , 30 , 33
+			9 , 15 , 20 , 28 , 43 , 45
+	
+			힌트 ]
+					숫자 < 10
+					' ' + 숫자
+	*/
+	
+	//var arr = [ 4 , 13 , 15 , 20 , 28 , 36];
+	var str = '';
+	for(var k = 0 ; k < lotteryGame.length ; k++ ){
+		var arr = lotteryGame[k];
+		str = str + '<h3>|';
+		/*
+		for(var i = 0 ; i < arr.length ; i++ ){
+			var no = arr[i];
+			var tmp = no < 10 ? ' &nbsp; ' + no + ' |': ' ' + no + ' |';
+			str =str + tmp;
+		}
+		*/
+		str = str + arr.join(' | ')
+		str = str + '</h3>';
+	}
+	
+	document.getElementById('content').innerHTML = str;
+
+
+</script>
+</body>
+
+
+</html>

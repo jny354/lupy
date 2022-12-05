@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var city = []; //배열 변수 선언
+	//배열에 데이터 입력
+	city[0] = 'Seoul'; //첫번째 방에 데이터 입력
+	city[1]= 'Busan'; // 두번째 방에 데이터 입력
+	city[2] = 'Incheon';
+	city[3] = 'Mokpo';
+	city[4] = 'Sejong';
+	
+	//배열에서 데이터 꺼내기
+	var city1 = city[0]; //첫번째 방 데이터 꺼내서 변수에 기억
+	var city5 = city[4]; // 다섯번째 방 데이터 꺼내서 변수에 기억
+	
+	//반복해서 배열의 데이터 꺼내서 출력하는 기능의 함수
+
+	function printArr(){
+		for(var i = 0 ; i < city.length ; i++){
+			var ct = city[i];
+			document.write(ct + ' - ' + i + '<br>');
+			
+		}
+		
+	}
+	//함수 호출
+	printArr();
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

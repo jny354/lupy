@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type="text/javascript" src="../js/w3color.js"></script>
+<script type= "text/javascript">
+
+
+/*
+ * 문제 1 ]
+	1.
+	다섯 학생의 국어, 영어, 수학 점수를 기억할 배열을 만들고,
+	점수를 60 ~ 100 사이로 랜덤하게 만들어서 채워 넣으세요.
+	
+	2. 각 학생들의 총점을 계산해서 출력하세요.
+	
+	3. 총점까지 기억하는 배열을 만들고, 총점이 높은 학생부터 정렬해서
+		결과를 출력하세요.
+ */
+ 
+ 
+	var score = []; // 다섯학생의 점수를 기억할 배열
+	
+	for(var i = 0 ; i < 5 ; i++ ){
+		//한 학생의 각 과목 점수
+		var stud = []; //한 학생의 점수를 기억할 배열
+		for(var j = 0 ; j < 3 ; j++ ){
+			var no = parseInt(Math.random() * (100 - 60 + 1)) + 60;
+			stud[j] = no;
+		
+		}
+		//한 학생의 점수가 완성이 됐으므로,
+		score[i] = stud;
+	}
+	
+	for(var i = 0 ; i < score.length ; i++ ){
+		document.write('<h3 class="' + colorlist[i] + ' w3-padding w3-center">' + score[i] + '</h3>');
+		
+	}
+
+	
+ /*
+  * 	sort() : 배열에 기억된 데이터를 오름차순으로 정렬해서 수정하는 함수
+  	reverse() : 배열에 기억된 데이터를 역순으로 수정하는 함수
+  */
+  
+  /*
+	var grade01= ['국어', '영어', '수학'];
+	document.write(grade01 + '<br>');
+	
+ 	var grade = [];
+  	
+  	loop:
+  	for(var i = 0 ; i < 5 ; i++ ){
+  		// 
+  		var no = parseInt(Math.random()* 100) ;
+  		
+  		//중복 검사
+  		for(var j = 0 ; j < i ; j++){
+  			if(grade[j] == no){
+  				// 이미 기억하고 있는 번호인 경우,
+  				i--;
+  				continue loop;
+  			}
+  			
+  		}
+  		//중복 검사에 통과한 경우이므로, 번호를 배열에 채워준다.
+  		console.log(typeof no);
+  		grade[i] = no;
+  	}
+
+  	// 출력
+  	document.write('성적 랜덤순 : ' + grade + '<br>');
+  	
+  	
+ 	// 수치정렬
+ 	grade.sort(function(a, b){
+ 		return a - b;
+ 	});
+ 	document.write('성적 낮은 순 : ' + grade + '<br>');
+ 	
+ 	
+  	//역정렬
+  	grade.reverse();
+ 	document.write('성적 높은 순 : ' + grade + '<br>');
+ 	
+ 	*/
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

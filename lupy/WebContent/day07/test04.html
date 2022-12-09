@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var kdata = ['서울', '인천'];
+	var p1 = kdata.unshift('과천', '안산');
+	document.write('<h3 class="w3-center">p1 : ' + p1 + '</h3>');
+	document.write('<h3 class= "w3-center">kdata : ' + kdata + '</h3>')
+	
+	var p2 = kdata.shift(); //처음 위치에 데이터를 삭제하고, 삭제된 데이터를 반환
+	document.write('<h3 class="w3-center">p2 : '+ p2 + '</h3>');
+	document.write('<h3 class= "w3-center">kdata : ' + kdata + '</h3>')
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var arr = [];
+	for(var i = 0 ; i < 20 ; i++ ){
+		arr[i] = parseInt(Math.random() * 20) + 1;
+	}
+	for(var i = 0 ; i < arr.length ; i++ ){
+		document.write(arr[i] + ' | ');
+	}
+	document.write('<br>');
+	
+	var func01 = function(data){
+		return data > 9;
+	};
+	
+	var newArr = arr.filter(func01);
+	
+	var new02 = arr.filter(function(data){
+		return data > 9;	
+	});
+	
+	
+	function printArr(arr){
+		document.write('<h1 class="w3-text-green w3-center">');
+		for(var i = 0 ; i < arr.length ; i++ ){
+			document.write(arr[i] + ' | ');
+		}
+		document.write('</h1>');
+	}
+	printArr(newArr);
+	
+	newArr.sort();
+	printArr(newArr);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

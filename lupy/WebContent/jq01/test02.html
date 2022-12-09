@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.box100').addClass('w3-border');
+		
+		$('div.box100').first().addClass('w3-purple');
+		$('.box100:first-child').addClass('w3-text-lime');
+		
+		$('.box100:odd').css('font-size', '16pt');
+		
+		$('.box100:nth-last-of-type(2)').addClass('w3-pink')
+		
+		$('.box100:hidden').css('display', 'inline-block');
+		
+		$('.box100:contains("span")').addClass('w3-green');
+		$('.w3-content > * ').eq(1).contents().addClass('w3-card-4');
+		$('.w3-content > *').filter('.w3-orange').addClass('w3-card-4');
+		
+		$('.w3-content').find('.box100').removeClass('w3-card-4');
+		
+		$('.w3-content').children().eq(1).find('span').addClass('w3-card-4');
+		$('.w3-content').children().eq(1).find('span').closest('div').addClass('w3-border w3-padding');
+		
+		var el = $('span');
+		
+		var txt = el.get(0).innerHTML;
+//		alert(txt);
+
+		var el1 = $('.w3-content').children().eq(1).find('div').eq(2);
+		el1.removeClass('w3-border').css('border', '20px solid indigo');
+		el1.end().removeClass('w3-purple w3-pink').addClass('w3-red');
+//		$('.w3-content').children().eq(1).find('div').eq(2).end().removeClass('w3-purple w3-pink').addClass('w3-red');
+		
+		
+	});
+
+</script>
+
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-orange w3-padding">선택자</h1>
+		<div class="w3-col w3-margin-top">
+			<span class="inblock box100" id="sp">span</span>
+			<div class="inblock box100" style="display: none;">div-h</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100" style="display: none;">div-h</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100">div</div>
+			<span class="inblock box100">span2</span>
+		</div>
+	</div>
+</body>
+</html>

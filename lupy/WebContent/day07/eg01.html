@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	
+	//
+//	var nums = [];
+//	==> 위 배열에 반복문을 사용해서 숫자를 1 ~ 10 까지 채우세요.
+	
+	var nums =[];
+	var no = 1;
+	while(nums.length < 10){
+		nums.push(no++);
+	}
+	document.write('<h3 class="w3-center"> nums : ' + nums + '</h3>');
+	nums.length = 0;
+	
+	for(var i = 0 ; i < 10 ; i++){
+		nums.unshift(10 - i);
+	}
+	document.write('<h3 class="w3-center"> nums : ' + nums + '</h3>');
+	
+	// 배열의 데이터를 더한 값을 출력하세요. 
+	var sum = 0;
+	for(var i = 0 ; i < nums.length ; i++){
+		sum += nums[i];
+		
+	}
+	document.write('<h3 class="w3-center"> nums 배열 데이터 합계 : ' + sum + '</h3>');
+	
+	
+	var total = 0;
+	nums.forEach(function(item){
+		total += item;
+		
+	});
+	document.write('<h3 class="w3-center"> nums 배열 데이터 합계2 : ' + total + '</h3>');
+	/*
+	var nums = ['1'];
+//	var p1 = kdata.unshift('1', '2');
+//	document.write('<h3 class="w3-center">p1 : ' + p1 + '</h3>');
+	document.write('<h3 class= "w3-center">nums : ' + nums + '</h3>')
+
+	
+	*/
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

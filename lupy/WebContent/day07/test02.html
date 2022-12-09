@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var kdata = ['서울', '부산', '안산', '대구', '인천', '과천', '대전'];
+	document.write('<h3 class="w3-center"> kdata : ' + kdata + '</h3>');
+	var str1 = kdata.splice(3, 1);
+	alert(Array.isArray(str1) ? '배열' : '안배열');
+	document.write('<h3 class="w3-center"> str1 : ' + str1 + '</h3>');
+	document.write('<h3 class="w3-center"> kdata : ' + kdata + '</h3>');
+	
+	
+	var str2 = kdata.splice(1, 1, '강릉', '세종');
+	document.write('<h3 class="w3-center"> str2 : ' + str2 + '</h3>');
+	document.write('<h3 class="w3-center"> kdata : ' + kdata + '</h3>');
+	document.write('<h3 class="w3-center"> kdata[2] : ' + kdata[2] + '</h3>');
+	
+	var str3 = kdata.splice(2, Number.MAX_VALUE);
+	document.write('<h3 class="w3-center"> str3 : ' + str3 + '</h3>');
+	document.write('<h3 class="w3-center"> kdata : ' + kdata + '</h3>');
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

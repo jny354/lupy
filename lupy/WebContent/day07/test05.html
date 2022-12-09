@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forEach</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var kdata = ['서울', '부산', '인천', '과천'];
+	
+	function printArr(item, index){
+		document.write('<h3 class="w3-center">배열 데이터 [ ' +
+														index + ' ] : ' + item + '</h3>');
+	}
+	kdata.forEach(printArr);
+	document.write('<hr>');
+	
+	function printArr1(index){
+		document.write('<h3 class="w3-center">배열 데이터 : ' + index + '</h3>');
+	}
+	
+	kdata.forEach(printArr1);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	/*
+		param 데이터를 분리해서
+		연관배열을 만드세요.
+		
+		출력해주세요.
+		
+		예]
+	
+			id : Chopper
+			pw : 12345
+			mail : Chopper@githrd.com
+			job : doctor
+			
+		참고 함수 ]
+		substring(시작인덱스, 끝인덱스)
+		==> 문자열의 시작인덱스에서 부터 끝인덱스이전까지 잘라서 반환해주는 함수
+		
+		substring(시작인덱스)
+		==> 문자열의 시작인덱스에서부터 마지막까지 잘라서 반환해주는 함수
+	*/
+	var param = '?id=Chopper&pw=12345&mail=Chopper@githrd.com&job=doctor';
+	
+	var paramData = {};
+	
+	var data = param.substring(1);
+//	alert(data.indexOf('#')); //없는 데이터의 인덱스를 찾는 경우 -1을 반환해준다.
+
+	var arr = [];
+	var tmp = data;
+	for(var i = 0 ; ; i++ ){
+		var idx = tmp.indexOf('&');
+		if(idx == -1){ //찾는값이 없을때 반환값이 -1이 된다.
+			arr[i] = tmp;
+			break;
+		}
+		var str = tmp.substring(0,idx);
+		arr[i] = str;
+		tmp = tmp.substring(idx + 1);
+	}
+// 	['id=chopa', 'pw=12345', 'mail=chopa@githrd.com', 'job=doctor']
+	document.write(arr);
+
+	var keys = [];
+	//1st
+	for(var i = 0 ; i < arr.length ; i++ ){
+		var str = arr[i]; // 'id=Chopper'
+		// = 의 인덱스 추출
+		var idx = str.indexOf('=');
+		var key = str.substring(0, idx);
+		var value = str.substring(idx + 1);
+		keys.push(key); //키 값 배열에 키값 추가
+		paramData[key] = value; //연관배열에 데이터 추가
+	}
+	
+	
+	/*
+	//2nd
+	var str = arr[1]; // 'pw=12345'
+	// = 의 인덱스 추출
+	var idx = str.indexOf('=');
+	
+	var key = str.substring(0, idx);
+	var value = str.substring(idx + 1);
+	keys.push(key); //키 값 배열에 키값 추가
+	paramData[key] = value; //연관배열에 데이터 추가
+	
+	//3nd
+	var str = arr[2]; // 'pw=12345'
+	// = 의 인덱스 추출
+	var idx = str.indexOf('=');
+	
+	var key = str.substring(0, idx);
+	var value = str.substring(idx + 1);
+	keys.push(key); //키 값 배열에 키값 추가
+	paramData[key] = value; //연관배열에 데이터 추가
+	*/
+	
+	//출력
+	for(var i = 0 ; i < keys.length ; i++){
+		documentwrite('<h3 class="w3-center">' + keys[i] + ' : ' + paramData[keys[i]] + '</h3>');
+	}
+	
+	/*
+	var data = param.substring(12, 20);
+	alert(data);
+	var data = param.substring(21, 44);
+	alert(data);
+	var data = param.substring(45, 55);
+	alert(data);
+	*/
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

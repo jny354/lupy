@@ -6,9 +6,13 @@
 <link rel="stylesheet" type="text/css" href="../css/w3.css">
 <link rel="stylesheet" type="text/css" href="../css/Coco.css">
 <script type="text/javascript" src="../js/w3color.js"></script>
+<style type="text/css">
+	.score > nth-last-child(1), .score > :nth-last-child(2){
+		font-weight: bold;
+		font-color: #f44336;
+	}
+</style>
 <script type= "text/javascript">
-
-
 /*
  * 문제 1 ]
 	1.
@@ -20,27 +24,66 @@
 	3. 총점까지 기억하는 배열을 만들고, 총점이 높은 학생부터 정렬해서
 		결과를 출력하세요.
  */
- 
- 
-	var score = []; // 다섯학생의 점수를 기억할 배열
-	
+ 	var student = ['Chopper', 'Luffy', 'Zoro', 'Nami', 'Sanji'];
+	var subj = ['자바', '오라클', '웹', '총점'];
+	var score = []; //다섯학생의 점수를 기억할 배열
+	var stud = [];	
 	for(var i = 0 ; i < 5 ; i++ ){
 		//한 학생의 각 과목 점수
-		var stud = []; //한 학생의 점수를 기억할 배열
+		score[i] = []; //한 학생의 점수를 기억할 배열
 		for(var j = 0 ; j < 3 ; j++ ){
 			var no = parseInt(Math.random() * (100 - 60 + 1)) + 60;
-			stud[j] = no;
-		
+			score[i][j] = no;
 		}
 		//한 학생의 점수가 완성이 됐으므로,
-		score[i] = stud;
+		//score[i] = stud;
 	}
-	
-	for(var i = 0 ; i < score.length ; i++ ){
+	/*
+	for(var i = 0 ; i < score.length ; i++){
 		document.write('<h3 class="' + colorlist[i] + ' w3-padding w3-center">' + score[i] + '</h3>');
+	}
+	*/
+	
+	for(i = 0 ; i < score.length ; i++ ){
+		stud[i] = [];
+		stud[i][3] = 0 ;
+		for(j = 0 ; j < score[i].length ; j++ ){
+			stud[i][j] = score[i][j];
+			stud[i][3] += score[i][j];
+		}
+	}
+	/*
+	//총점 기준 내림차순 정렬
+	for(var i = 0 ; i < stud.length - 1 ; i++ ){
+		for(var j = i + 1 ; j < stud.length ; j++ ){
+			if(stud[i][3] < stud[j][3]){
+				var tmp = stud[i];
+				stud[i] = stud[j];
+				stud[j] = tmp;	
+			}
+		}
+	}
+	*/
+	stud.sort(function(a, b){
+		return b[3] - a[3];
+	});
+	
+	document.write('<div class="w3-content mxw550">');
+	document.write('<h1 class="w3-red w3-padding w3-center w3-card-4">글로벌아이티 학생별 평가 점수</h1>');
+	for(var i = 0 ; i < stud.length ; i++ ){
+		document.write('<div class="w3-col w3-margin-top w3-card-4">');
+		document.write('<h3 class="w3-col ' + colorlist[i] + ' w3-padding w3-center" style="margin-top: 0px!important">' + student[i] + '</h3>');
+		document.write('<div class="w3-col w3-margin-top w3-margin-bottom">');
+		for(var j = 0 ; j < stud[i].length ; j++ ){
+			document.write('<h5 class="w3-col m4 w3-right-align">' + subj[j] + ' : ' + '</h5>');
+			document.write('<h5 class="w3-col m6 mgl10 w3-center">' + stud[i][j] + '</h5>');
+			
+		}
+		document.write('</div>');
+		document.write('</div>');
 		
 	}
-
+	document.write('</div>');
 	
  /*
   * 	sort() : 배열에 기억된 데이터를 오름차순으로 정렬해서 수정하는 함수

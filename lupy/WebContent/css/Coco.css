@@ -103,3 +103,18 @@
 	width:160px;
 	
 }
+
+/*라벨*/
+.label1 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 250%
+	
+}
+
+/*박스*/
+.box100{
+	width:100px;
+	height:100px;
+	
+}

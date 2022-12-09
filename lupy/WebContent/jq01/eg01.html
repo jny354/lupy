@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	html, body {
+		margin: 0px;
+		height: 100%;
+	}
+	#fr2 {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/*
+			입력태그의 입력내용 꺼내는 함수 : val()
+			일반태그의 내용 꺼내는 함수 : html ()
+			
+			==>
+				내용 입력
+					입력태그 : $(태그선택).val(데이터);
+					일반태그 : $(태그선택).html(데이터);
+		
+		*/
+		
+		/*리셋버튼 클릭이벤트*/
+		$('#rbtn').click(function(){
+			$('#fr1 input').val('');
+		});
+		/*
+		//정보확인 버튼 클릭이벤트
+	$(document).ready(function(){
+ 		//필요한 기능 또는 처리는 여기서 하면 된다.
+ 		var tid = $('#id');
+ 		var pid = '#id' ;
+ 		//로그인 버튼 클릭이벤트
+		$('#lbtn').click(function(){
+			alert($(pid).val() + ' - ' + $('frm.pw').val());
+		//	alert(tid.val() + ' - ' + $(frm.pw).val());
+		//	alert($(document.frm.id).val() + ' - ' + $(frm.pw).val());
+		});
+ 		
+ 		$('#rbtn').click(function(){
+// 			$(document.getElementById('frm')).get(0).reset();
+			
+			addEl();
+
+ 		});
+ 		
+ 		function addEl(){
+ 			var el = document.createElement('div');
+ 			$(el).attr('display', 'inline-block').attr('width', '100px').attr('height', '100px').addC
+ 			$(el).html('div');
+ 			
+ 			$('#fr').append(el);
+ 		}
+		//리셋버튼 클릭이벤트
+		$('#rbtn').click(function(){
+			$('#fr1 input').val('');
+		});
+		
+		*/
+		//정보확인 버튼 클릭이벤트
+		$('#cbtn').click(function(){
+			//할 일
+			//1. 입력데이터 읽어오고,
+			var nid = $('#sid').val();
+			var npw = $('#spw').val();
+			//2. 데이터 채우고
+			$('#pid').addClass('w3-center').html(nid); //읽은 내용으로 채워준다.
+			$('#ppw').addClass('w3-center').html(npw);
+			//3. 입력태그 내용 지우고
+			$('#fr1 input').val('');
+			//4. 입력 태그 감추고,
+			$('#fr1').css('display', 'none');
+			//5. 정보태그 보여주고
+			$('#fr2').css('display', 'block');
+		});
+		/*back 버튼 클릭이벤트*/
+		$('#bbtn').click(function(){
+			
+			/*
+			// 할 일
+			//1. 정보 보여주는 내용 지우고
+			$('#pid, #ppw').html('');
+			//2. 정보 보기창 감추고
+			$('#fr2').css('display','none');
+			//3. 입력창 보여주고
+			$('#fr1').css('display','block');
+			
+			});
+			*/
+//			$('#pid, #ppw').html('').parent().parent().parent().css('display', 'none').prev().css('display','block');
+			$('#pid, #ppw').html('').parents().filter('#fr2').css('display', 'none').prev().css('display','block');
+		});
+		//전송하기 버튼 클릭이벤트
+		$('#sbtn').click(function(){
+		});
+			//할 일
+			//1. 정보보기 태그 내용 읽고(아이디, 비밀번호)
+			var tid = $('#pid').html();
+			var tpw = $('#ppw').html();
+			/*
+			2. 입력태그에 내용 입력
+			$('#id').val(tid);
+			$('#pw').val(tpw);
+			*/
+			//2. 태그 만들어서 추가하고,
+			var qid = document.createElement('input'); // qid 자바스크립트 객체<input>
+			$(qid).attr('name', 'id').attr('type', 'hidden').val(qid);
+			
+			var qpw = document.createElement('input');
+			$(qpw).attr('name', 'pw').attr('type', 'hidden').val(tpw);
+			
+			//태그 추가
+			$('#frm').append(qid);
+			$('#frm').append(qpw);
+			
+			//3. 전송하고
+			$('#frm').submit();
+		
+
+	});
+</script>
+</head>
+<body class="w3-display-container">
+	<div class="w3-content w3-display-middle mxw650" id="fr1">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보입력</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class ="w3-col w3-margin-top">
+				<label class="w3-col m3 w3-right-align label1" for="sid">아이디</label>
+				<div class="w3-col m7 pdl10">
+					<input type="text" name="id" id="sid" class="w3-input w3-border">
+				</div>
+			</div>
+			
+			<div class ="w3-col w3-margin-bottom mgt10">
+				<label class="w3-col m3 w3-right-align label1" for="spw">비밀번호</label>
+				<div class="w3-col m7 pdl10">
+					<input type="password" name="pw" id="spw" class="w3-input w3-border">
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="rbtn">reset</div>
+			<div class="w3-half w3-red w3-button" id="cbtn">정보확인</div>
+		</div>
+	</div>
+	<!-- 
+		정보확인 버튼이 클릭되면, 
+		아이디와 비밀번호에 입력된 값을
+		정보확인 태그의 아이디와 비밀번호에 채우고, 
+		아이디와 비밀번호의 
+		입력창은 보이지 않게 처리,
+		정보확인 창은 보여지게 처리한다.
+		 -->
+	
+	<!-- 정보확인 태그 -->
+	<div class="w3-content mxw650" id="fr2">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보확인</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class ="w3-col w3-margin-top">
+				<h3 class="w3-col m3 w3-right-align">아이디 : </h3>
+				<h3 class="w3-col m7 pdl10" id="pid"></h3>
+			</div>
+			<div class ="w3-col w3-margin-bottom mgt10">
+				<h3 class="w3-col m3 w3-right-align">비밀번호 : </h3>
+				<h3 class="w3-col m7 pdl10" id="ppw"></h3>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="bbtn">back</div>
+			<div class="w3-half w3-red w3-button" id="sbtn">전송하기</div>
+		</div> 
+	</div>
+	<!-- 
+		back 버튼이 클릭되면,
+		정보확인 창의 아이디, 비밀번호를 지우고,
+		정보확인 창은 가리고,
+		정보 입력창을 보여지게 처리한다.
+		
+		전송하기 버튼이 클릭이 되면, 
+		정보확인 창은 아이디, 비밀번호를 읽어서 
+		전송용 태그의 아이디, 비밀번호에 채우고, 
+		
+		폼을 전송한다.
+		
+		result.html 에서는 전달받은 데이터(파라미터)를 꺼내서, 출력하세요.
+	 -->
+	<!-- 데이터 전송태그 -->
+	<form method="GET" action="result.html" name="frm" id="frm">
+	<!--  -->
+		<input type="hidden" name="id" id="id">
+		<input type="hidden" name="pw" id="pw">
+	</form>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

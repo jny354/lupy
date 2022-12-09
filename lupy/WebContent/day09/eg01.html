@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<style type="text/css">
+	#fr2{
+		display: none;
+	}
+</style>
+<script type= "text/javascript">
+
+</script>
+
+</head>
+<body>
+	<div class="w3-content mxw650" id="fr1">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보입력</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class ="w3-col w3-margin-top">
+				<label class="w3-col m3 w3-right-align" for="sid">아이디</label>
+				<div class="w3-col m7 pdl10">
+					<input type="text" name="id" id="sid" class="w3-input w3-border">
+				</div>
+			</div>
+			
+			<div class ="w3-col w3-margin-bottom mgt10">
+				<label class="w3-col m3 w3-right-align" for="spw">비밀번호</label>
+				<div class="w3-col m7 pdl10">
+					<input type="password" name="pw" id="spw" class="w3-input w3-border">
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="rbtn">reset</div>
+			<div class="w3-half w3-red w3-button" id="cbtn">정보확인</div>
+		</div>
+	</div>
+	
+	<!-- 
+		정보확인 버튼이 클릭되면, 
+		아이디와 비밀번호에 입력된 값을
+		정보확인 태그의 아이디와 비밀번호에 채우고, 
+		아이디와 비밀번호의 
+		입력창은 보이지 않게 처리,
+		정보확인 창은 보여지게 처리한다.
+		 -->
+	
+	<!-- 정보확인 태그 -->
+	<div class="w3-content mxw650" id="fr2">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보확인</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class ="w3-col w3-margin-top">
+				<h3 class="w3-col m3 w3-right-align">아이디 : </h3>
+				<h3 class="w3-col m7 pdl10" id="pid"></h3>
+					
+				</div>
+			</div>
+			
+			<div class ="w3-col w3-margin-bottom mgt10">
+				<h3 class="w3-col m3 w3-right-align">비밀번호 : </h3>
+				<h3 class="w3-col m7 pdl10" id="ppw"></h3>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="bbtn">back</div>
+			<div class="w3-half w3-red w3-button" id="sbtn">전송하기</div>
+		</div>
+
+	
+	<!-- 
+		back 버튼이 클릭되면,
+		정보확인 창의 아이디, 비밀번호를 지우고,
+		정보확인 창은 가리고,
+		정보 입력창을 보여지게 처리한다.
+		
+		전송하기 버튼이 클릭이 되면, 
+		정보확인 창은 아이디, 비밀번호를 읽어서 
+		전송용 태그의 아이디, 비밀번호에 채우고, 
+		
+		폼을 전송한다.
+		
+		result.html 에서는 전달받은 데이터(파라미터)를 꺼내서, 출력하세요.
+	 -->
+	<!-- 데이터 전송태그 -->
+	<form method="GET" action="result.html" name="frm">
+		<input type="hidden" name="id" id="id">
+		<input type="hidden" name="pw" id="pw">
+	</form>
+</body>
+</html>

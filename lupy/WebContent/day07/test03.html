@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>stack</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type= "text/javascript">
+	var kdata = ['서울', '부산', '안산', '수원', '인천'];
+	var p1 = kdata.push('과천', '안양');
+	document.write('<h3 class="w3-center">p1 : ' + p1 + '</h3>');
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+	
+	var p2 = kdata.pop(); //맨 마지막 위치의 데이터를 삭제하고, 삭제된 데이터를 반환해 주는 함수
+	document.write('<h3 class="w3-center">p2 : ' + p2 + '</h3>');
+	document.write('<h3 class="w3-center">Array.isArray(p2) : ' + Array.isArray(p2) + '</h3>');
+	document.write('<h3 class="w3-center">p2 instanceof string : ' + (p2 instanceof String) + '</h3>');
+	document.write('<h3 class="w3-center">p2 type : ' + (typeof p2) + '</h3>');
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+	
+	var nums = [1, 2, 3, 4, 5];
+	var tmp = nums.pop();
+	document.write('<h3 class="w3-center">p2 type : ' + (typeof p2) + '</h3>');
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

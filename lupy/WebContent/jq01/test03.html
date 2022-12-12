@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type= "text/javascript">
+
+	var nemos = [];
+	for(var i = 0 ; i < 12 ; i++ ){
+		var garo = parseInt(Math.random()*81) + 20;
+		var sero = parseInt(Math.random()*81) + 20;
+		nemos[i] = [];
+		nemos[i][0] = garo;
+		nemos[i][1] = sero;
+	}
+	
+	/*
+	var areas = [];
+	
+	for(var i = 0 ; i < nemos.length ; i++ ){
+		//사각형 하나 꺼내고,
+		var sagak = nemos[i];
+		var garo = sagak[0];
+		var sero = sagak[1];
+		
+		var myunjuk = garo * sero;
+		
+		areas[i] = myunjuk;
+		
+	}
+	*/
+	/*
+	var areas = nemos.map(function(val){
+		var garo = val[0];
+		var sero = val[1];
+		var area = garo * sero;
+		
+		return area;
+	});
+	*/
+	
+	$(document).ready(function(){
+		var areas = $.map(nemos, function(val){
+			var garo = val[0];
+			var sero = val[1];
+			return garo * sero;
+		});
+//		alert(nemos[2] + ' : ' + areas[2]);
+		$(nemos).each(function(idx,val){
+			var garo = val[0];
+			var sero = val[1];
+			var area = garo * sero;
+			
+			$('body').append('<h1 class="w3-center">가로 : ' + garo + '</h1>');
+			$('body').append('<h1 class="w3-center">세로 : ' + sero + '</h1>');
+			$('body').append('<h1 class="w3-center">면적 : ' + area + '</h1>');
+			$('body').append('<hr>');
+		});
+	});
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

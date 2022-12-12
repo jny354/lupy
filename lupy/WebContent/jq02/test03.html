@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	#preView{
+		display: none;
+	}
+</style>
+<script type= "text/javascript">
+	$(document).ready(function(){
+		$('#file').change(function(evt){
+			// 할 일:
+			// 선택한 파일 읽어온다.
+			
+			/*
+			var sfile = 4(this).val();
+			alert(sfile);
+			*/
+			
+			$('#preView').stop().slideUp(300,function(){
+				var path = URL.createObjectURL(evt.target.files[0]);
+				$('#image1').attr('src', path);
+				
+				//감싸는 태그 보여주고
+//				$('#preView').css('display', 'block');
+				$('#preView').slideDown(1000);
+				
+				//연구과제
+				//파일태그가 선택이 끝나면 새로운 비어있는 파일태그를 추가해주는 기능 구현
+				
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<h1 class="w3-yellow w3-padding w3-center w3-card-4">게시글 쓰기</h1>
+		
+		<form method="POST" action="#" name="frm" id="frm"
+				class="w3-col w3-padding w3-card-4" encType="multipart/form-data">
+			<div class="w3-col w3-margin-top">
+				<label for="name" class="w3-col m2 w3-text-grey w3-right-align label1">작성자</label>
+				<div class="w3-col m8 pdl10">
+					<input type="text" name="name" id="id" class="w3-input w3-border" placeholder="작성자 이름 입력">
+				</div>
+			</div>
+			<div class="w3-col mgt10 w3-margin-bottom">
+				<label for="file" class="w3-col m2 w3-right-align w3-text-grey label1">업로드</label>
+				<div class="w3-col m8 pdl10">
+					<input type="file" name="file" id="file" class="w3-input w3-border" placeholder="이미지 파일 선택">
+				</div>
+			</div>
+			<div class="w3-col mgt10" id="preView">
+				<label for="file" class="w3-col m2 w3-right-align w3-text-grey label1">미리보기</label>
+				<div class="w3-col m8 w3-center pdl10">
+					<div class="inblock box100 w3-border w3-card-4">
+						<div class="w3-col w3-border imgbox mgl10 mgt10">
+							<img class="img1" id="image1" src="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- 버튼 -->
+		<div class="w3-col w3-card-4 w3-margin-top">
+			<div class="w3-half w3-button w3-purple w3-hover-pink" id="rbtn">reset</div>
+			<div class="w3-half w3-button w3-blue w3-hover-aqua" id="sbtn">작성하기</div>
+		
+		
+		</div>
+	</div>
+</body>
+</html>

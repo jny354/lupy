@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	/* eg01 버튼 클릭 이벤트 */
 	$('#e1btn').click(function(){
-		$(location).attr('href', './ex01.html');
+		$(location).attr('href', './eg01.html');
 		
 	});
 	
@@ -31,8 +31,10 @@ $(document).ready(function(){
 			var val_id = data['id'];
 			var val_pw = data['pw'];
 			
-			$('pid').html(val_id);
-			$('ppw').html(val_pw);
+			$('#pid').html(val_id);
+			$('#ppw').html(val_pw);
+			
+			
 			
 			//4. 감싸는 태그 보여주고,
 			$('#fr').slideDown(500);

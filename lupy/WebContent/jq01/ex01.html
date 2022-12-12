@@ -100,7 +100,6 @@
 		});
 		//전송하기 버튼 클릭이벤트
 		$('#sbtn').click(function(){
-		});
 			//할 일
 			//1. 정보보기 태그 내용 읽고(아이디, 비밀번호)
 			var tid = $('#pid').html();
@@ -112,7 +111,7 @@
 			*/
 			//2. 태그 만들어서 추가하고,
 			var qid = document.createElement('input'); // qid 자바스크립트 객체<input>
-			$(qid).attr('name', 'id').attr('type', 'hidden').val(qid);
+			$(qid).attr('name', 'id').attr('type', 'hidden').val(tid);
 			
 			var qpw = document.createElement('input');
 			$(qpw).attr('name', 'pw').attr('type', 'hidden').val(tpw);
@@ -123,7 +122,7 @@
 			
 			//3. 전송하고
 			$('#frm').submit();
-		
+		});
 
 	});
 </script>
@@ -194,9 +193,10 @@
 	 -->
 	<!-- 데이터 전송태그 -->
 	<form method="GET" action="result.html" name="frm" id="frm">
-	<!--  -->
+	<!--  
 		<input type="hidden" name="id" id="id">
 		<input type="hidden" name="pw" id="pw">
+	-->
 	</form>
 <script type="text/javascript">
 

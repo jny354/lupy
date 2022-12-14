@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/Coco.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type= "text/javascript">
+	$(document).ready(function(){
+		var param = $(location).attr('search');
+		param = param.substring(1);
+		
+		var data = {};
+		var arr = param.split('&');
+		for(var i = 0 ; i < arr.length ; i++ ){
+			var tmp = arr[i].split('=');
+			data[tmp[0]] = tmp[1];
+		}
+		
+		var imagename = data['imgname'];
+		
+		$('#foodImg').attr('src', '../img/w3Images/' + imagename);
+	});
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

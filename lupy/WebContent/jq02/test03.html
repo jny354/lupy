@@ -12,15 +12,16 @@
 	}
 </style>
 <script type= "text/javascript">
+	var cnt = 1;
 	$(document).ready(function(){
-		$('#file').change(function(evt){
+	//	$('#file').change(function(evt){
 			// 할 일:
 			// 선택한 파일 읽어온다.
 			
 			/*
 			var sfile = 4(this).val();
 			alert(sfile);
-			*/
+			
 			
 			$('#preView').stop().slideUp(300,function(){
 				var path = URL.createObjectURL(evt.target.files[0]);
@@ -33,11 +34,40 @@
 				//연구과제
 				//파일태그가 선택이 끝나면 새로운 비어있는 파일태그를 추가해주는 기능 구현
 				
+//			});
+//		});
+	*/
+		
+		$('#filefr').on('change', '.file', function(evt){
+			var sfile = $(this).val();
+			if(!sfile){
+				//선택 취소 태그 삭제
+				var sid = $(this).attr('id');
+				sid = sid.substring(4);
+				$('#file' + sid).remove();
+				$('#image' + sid).parent().parent().remove();
+				return;
+			}
+			var no = cnt;
+			var path = URL.createObjectURL(evt.target.files[0]);
+			$('#preView').stop().slideUp(500, function(){
+				addTag(path, no);
+				$('#preView').slideDown(500);
 			});
+			$('#filefr').append('<input type="file" name="file" id="file' + ++cnt +
+									'" class="w3-input w3-border mgt10 file" placeholder="이미지 파일 선택!">');
 		});
+		
+		function addTag(path, no){
+			var tag =	'<div class="inbox box100 w3-border mgl10 mgb10 w3-card-4">' +
+							'<div class="w3-col w3-border imgbox mgl10 mgt10">' +
+								'<img class="img1" id="image' + no + '" src="' + path + '">' +
+							'</div>' +
+						'</div>';
+			$('#imgfr').append(tag);
+		}
 	});
 </script>
-
 </head>
 <body>
 	<div class="w3-content mxw600">
@@ -57,14 +87,17 @@
 					<input type="file" name="file" id="file" class="w3-input w3-border" placeholder="이미지 파일 선택">
 				</div>
 			</div>
-			<div class="w3-col mgt10" id="preView">
-				<label for="file" class="w3-col m2 w3-right-align w3-text-grey label1">미리보기</label>
-				<div class="w3-col m8 w3-center pdl10">
+			<div class="w3-col mgt10 w3-margin-bottom" id="preView">
+				<label class="w3-col m2 w3-right-align w3-text-grey label1">미리보기</label>
+				<div class="w3-col m8 w3-center pdl10" id="imgfr">
+				
+				<!-- 
 					<div class="inblock box100 w3-border w3-card-4">
 						<div class="w3-col w3-border imgbox mgl10 mgt10">
 							<img class="img1" id="image1" src="">
 						</div>
 					</div>
+					-->
 				</div>
 			</div>
 		</form>

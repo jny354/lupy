@@ -13,6 +13,8 @@
 	$(document).ready(function(){
 		var param = $(location).attr('search');
 		param = param.substring(1);
+		param = decodeURI(decodeURIComponent(param));
+		alert(param);
 		
 		var data = {};
 		var arr = param.split('&');
